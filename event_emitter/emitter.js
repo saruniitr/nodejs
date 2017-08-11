@@ -17,7 +17,7 @@ Emitter.prototype.emit = function(type) {
     // if we have this 'type' of event then invoke all listeners saved in this array
     if (this.events['type']) {
         this.events['type'].forEach(function(listener) {
-            listener();            
+            listener();
         });
     }
 }
