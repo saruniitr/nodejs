@@ -1,0 +1,30 @@
+<% include partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div>
+            <h1>Welcome to Space Gallery</h1>
+            <p>A selected collection of Celestial bodies</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/gallery/new">Add New Image</a>
+            </p>
+        </div>
+    </header>
+
+    <div class="row" style="display:flex; flex-wrap: wrap;">
+        <% spaceBodies.forEach(function(planet) { %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%= planet.source %>" style="width: 320px; height: auto">
+                </div>
+                <div class="caption" style="text-align: center">
+                    <h4><%= planet.name %></h4>
+                    <div style="width: 200px; word-wrap: break-word">
+                        <p><%= planet.source %></p>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+<% include partials/footer %>
